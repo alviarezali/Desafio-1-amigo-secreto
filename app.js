@@ -4,7 +4,10 @@ let listaDeAmigos = document.getElementById("listaAmigos");
 let resultado = document.getAnimations("resultado")
 let amigos = []
 function adicionarAmigo(){
-  let valor = entrada.value;
+  let valor = entrada.value.trim();
+  if(valor===""){
+    alert("Não insira um nome válido, tente novamente.")
+  }
   amigos.push(valor);
   listaDeAmigos.innerHTML = amigos.map((amigo) => `<li>${amigo}</li>`).join(""); 
   entrada.value = ""
